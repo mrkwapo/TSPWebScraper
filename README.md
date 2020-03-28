@@ -4,7 +4,7 @@ This Java Console Application web scraper uses Selenium to navigate to the TSP S
 
 
 # Created Using
-Markup : *Java
-         *Selenium
-         *Chrome Web Driver
-         *IntelliJ IDEA
+* Java
+* Selenium
+* Chrome Web Driver
+* IntelliJ IDEA
