@@ -43,8 +43,8 @@ public class ScraperSpring2020 implements Scraper {
         navigateToPage();
         inputDateRange();
 
-        //Selecting Table Data
-        List<WebElement> data = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("tspStandard"))).findElements(By.tagName("td"));
+        //Using a List to store WebElements from a table
+        List<WebElement> data = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("tspStandard"))).findElements(By.tagName("tr"));
         return data;
     }
 }
