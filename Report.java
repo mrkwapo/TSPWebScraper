@@ -1,18 +1,15 @@
 package com.Dracodess;
 
-import java.text.ParseException;
-
-//The concern of this class is to display a report of requested shares
+//The concern of this class is to handle displaying a report of retrieved shares
 public class Report {
-
-   private static Scraper scraper = new Scraper();
+    private static Scraper scraper = new ScraperSpring2020();
 
     public Report(Scraper scraper) {
         this.scraper = scraper;
     }
 
     //This method displays share data of a specified date or date range
-    public static void getSharePricesByDateRange() throws ParseException {
+    public static void getSharePricesByDateRange() {
         var prices = scraper.getShareData();
         System.out.println();
         System.out.println("______________________");
