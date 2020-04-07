@@ -13,7 +13,7 @@ import java.util.List;
 /* The concern of this class is to handle scraping data */
 public class ScraperSpring2020 implements Scraper {
     //Setting up and instantiating Chrome WebDriver to run in headless mode
-    private String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/Kwapalapagus/Desktop/Chrome/chromedriver.exe");
+    private String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/YourPathHere/chromedriver.exe");
     private ChromeOptions options = new ChromeOptions().addArguments("--headless");
     private WebDriver driver = new ChromeDriver(options);
 
