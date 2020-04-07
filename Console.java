@@ -66,7 +66,7 @@ public class Console {
                 }
                 System.out.println("End Date cannot be before Start Date");
             } catch (ParseException e) {
-                System.out.println("Error");
+                System.out.println("ParseError " + e.getMessage());
                 continue;
             }
         }
