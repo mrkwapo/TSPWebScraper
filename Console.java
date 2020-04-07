@@ -24,7 +24,7 @@ public class Console {
         while (true) {
             System.out.print(prompt);
             value = scanner.next();
-            if(isDateValid(value))
+            if (isDateValid(value))
                 break;
             System.out.println("Enter a valid date (MM/dd/yyyy)");
         }
@@ -32,8 +32,7 @@ public class Console {
     }
 
     //This method validates user input is in a valid date format
-    private static boolean isDateValid(String date)
-    {
+    private static boolean isDateValid(String date) {
         try {
             DateFormat df = new SimpleDateFormat(DATE_FORMAT);
             df.setLenient(false);
@@ -46,25 +45,29 @@ public class Console {
 
     //Getters
     //To handle date range, this method uses the isDateValid method to obtain a valid start date from the user
-    public static String getStartDate() throws ParseException {
+    public static String getStartDate() {
         startDate = Console.readDate("Start Date: ");
         return startDate;
     }
 
     //To handle date range, this method uses the isDateValid method to obtain a valid end date from the user
-    public static String getEndDate() throws ParseException {
+    public static String getEndDate() {
 
-        DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-        var start = df.parse(startDate);
 
         //Validates the end date is after or equal to the start date
         while (true) {
-            String end = Console.readDate("End Date: ");
-            if (start.before(df.parse(end)) || start.equals(df.parse(end))) {
-                endDate = end;
-                break;
+            try {
+                DateFormat df = new SimpleDateFormat(DATE_FORMAT);
+                var start = df.parse(startDate);
+                String end = Console.readDate("End Date: ");
+                if (start.before(df.parse(end)) || start.equals(df.parse(end))) {
+                    endDate = end;
+                    break;
+                }
+                System.out.println("End Date cannot be before Start Date");
+            } catch (ParseException e) {
+                continue;
             }
-            System.out.println("End Date cannot be before Start Date");
         }
         return endDate;
     }
