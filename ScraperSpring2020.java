@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 
-/* The concern of this class is to handle scraping data */
+//The concern of this class is to handle scraping data
 public class ScraperSpring2020 implements Scraper {
     //Setting up and instantiating Chrome WebDriver to run in headless mode
     private String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/YourPathHere/chromedriver.exe");
@@ -43,7 +43,7 @@ public class ScraperSpring2020 implements Scraper {
         navigateToPage();
         inputDateRange();
 
-        //Using a List to store WebElements from a table
+        //Using the List Interface to store WebElements from a table
         List<WebElement> data = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("tspStandard"))).findElements(By.tagName("tr"));
         return data;
     }
