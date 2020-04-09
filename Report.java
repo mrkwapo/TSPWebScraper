@@ -3,11 +3,6 @@ package com.Dracodess;
 //The concern of this class is to handle displaying a report of retrieved shares
 public class Report {
     private static Scraper scraper = new ScraperSpring2020();
-    
-    //Injecting the Scraper Class as a dependency into the Report constructor
-    public Report(Scraper scraper) {
-        this.scraper = scraper;
-    }
 
     //This method displays share data of a specified date or date range
     public static void getSharePricesByDateRange() {
